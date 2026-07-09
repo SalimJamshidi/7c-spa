@@ -5,7 +5,7 @@
 }
 
 .custom-navbar .navbar-brand {
-  color: #fff;
+  color: #3b2f2f;
   font-weight: 600;
   font-size: 1.2rem;
   letter-spacing: 0.5px;
@@ -21,7 +21,7 @@
 }
 
 .custom-navbar .nav-link {
-  color: #fff;
+  color: #3b2f2f;
   font-weight: 500;
   padding: 0.5rem 0.2rem;
   transition: color 0.3s ease, opacity 0.3s ease;
