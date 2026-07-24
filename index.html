@@ -1,62 +1,343 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Seven Sea Spa</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <title>Seven Seas Spa</title>
+  <style>
+    body {
+      font-family: 'Handlee', cursive;
+    }
+
+    .navbar-custom {
+      color: #3B2F2F;
+    }
+
+    .navbar-custom .nav-link {
+      color: #3B2F2F;
+    }
+
+    .navbar-custom .nav-link.active {
+      font-weight: bold;
+    }
+
+    .sticky {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .hero-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/image.capilot.png') no-repeat center center;
+      background-size: cover;
+      color: #FFEBD4;
+      padding: 100px 0;
+    }
+
+    .hero-section h1,
+    .section-heading {
+      font-family: 'Handlee', cursive;
+    }
+
+    .btn {
+      color: #3B2F2F;
+    }
+
+    .content-section {
+      padding: 64px 0;
+    }
+
+    .section-heading {
+      color: #3B2F2F;
+      margin-bottom: 32px;
+    }
+
+    .service-card,
+    .testimonial-card {
+      border: 1px solid #ead8c6;
+      border-radius: 8px;
+      height: 100%;
+    }
+
+    .service-image {
+      align-items: center;
+      background-color: #f4e7da;
+      display: flex;
+      aspect-ratio: 1 / 1;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .service-image img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      width: 100%;
+    }
+
+    .service-card .card-body,
+    .testimonial-card .card-body {
+      padding: 24px;
+    }
+
+    .tips-list {
+      margin: 0 auto;
+      max-width: 900px;
+    }
+
+    .tips-list li {
+      margin-bottom: 12px;
+    }
+
+    .testimonial-card blockquote {
+      margin-bottom: 12px;
+    }
+
+    .testimonial-carousel {
+      background-color: #fffaf5;
+      border: 1px solid #ead8c6;
+      border-radius: 8px;
+      margin: 0 auto;
+      max-width: 720px;
+      padding: 40px 72px 56px;
+    }
+
+    .testimonial-slide {
+      min-height: 270px;
+      text-align: center;
+    }
+
+    .testimonial-headshot {
+      border: 4px solid #ead8c6;
+      border-radius: 50%;
+      height: 96px;
+      margin-bottom: 20px;
+      object-fit: cover;
+      width: 96px;
+    }
+
+    .testimonial-carousel .carousel-control-prev,
+    .testimonial-carousel .carousel-control-next {
+      width: 12%;
+    }
+
+    .testimonial-carousel .carousel-control-prev-icon,
+    .testimonial-carousel .carousel-control-next-icon {
+      background-color: #3B2F2F;
+      background-size: 60%;
+      border-radius: 50%;
+      padding: 18px;
+    }
+
+    .testimonial-carousel .carousel-indicators [data-bs-target] {
+      background-color: #3B2F2F;
+    }
+
+    .profile-placeholder {
+      align-items: center;
+      background-color: #f4e7da;
+      border-radius: 50%;
+      color: #806b5b;
+      display: flex;
+      height: 80px;
+      justify-content: center;
+      margin-bottom: 16px;
+      width: 80px;
+    }
+
+    .site-footer {
+      background-color: #6F4E37;
+      color: #FFEBD4;
+      padding: 32px 0;
+    }
+
+    .footer-content {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .site-footer a {
+      color: #FFEBD4;
+      text-decoration: none;
+    }
+
+    .site-footer a:hover {
+      text-decoration: underline;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .social-links a {
+      align-items: center;
+      display: inline-flex;
+      font-size: 1.35rem;
+      justify-content: center;
+    }
+
+    @media (max-width: 575.98px) {
+      .footer-content {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg custom-navbar">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-                <img src="images/AIIAB_4_2_1_1.png" alt="Seven Sea Spa logo featuring a stylized water droplet or wave symbol in blue tones, representing tranquility and wellness in a spa setting" width="30" height="30">
-                Seven Sea Spa
-            </a>
-            
+  <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-custom sticky">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="images/AIIAB_4_2_1_1.png" alt="Logo" width="30" height="30">
+        Seven Seas Spa
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#wellness-tips">Wellness Tips</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
+  <div class="container-fluid hero-section text-center">
+    <h1 class="display-4">Welcome to Seven Seas Spa</h1>
+    <p class="lead">We are dedicated to improving your overall wellbeing.</p>
+    <a href="#services" class="btn btn-light btn-lg">Explore Services</a>
+  </div>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
+  <main>
+    <section class="container content-section" id="services">
+      <h2 class="section-heading text-center">Our Services</h2>
+      <div class="row g-4">
+              <div class="col-12 col-md-6">
+          <article class="card service-card">
+            <div class="service-image"><img src="images/yoga.png" alt="Yoga class"></div>
+            <div class="card-body">
+              <h3 class="h4">Yoga Classes</h3>
+              <p class="card-text">Improve your flexibility and reduce stress with our yoga classes.</p>
             </div>
+          </article>
         </div>
-    </nav>
+              <div class="col-12 col-md-6">
+          <article class="card service-card">
+            <div class="service-image"><img src="images/nutrition.png" alt="Healthy nutrition"></div>
+            <div class="card-body">
+              <h3 class="h4">Nutritional Advice</h3>
+              <p class="card-text">Get personalized nutritional advice to help you eat healthier.</p>
+            </div>
+          </article>
+        </div>
+              <div class="col-12 col-md-6">
+          <article class="card service-card">
+            <div class="service-image"><img src="images/mental_health.png" alt="Mental health support"></div>
+            <div class="card-body">
+              <h3 class="h4">Mental Health Support</h3>
+              <p class="card-text">We offer support and resources to help you take care of your mental health.</p>
+            </div>
+          </article>
+        </div>
+              <div class="col-12 col-md-6">
+          <article class="card service-card">
+            <div class="service-image"><img src="images/wellness.png" alt="Wellness program"></div>
+            <div class="card-body">
+              <h3 class="h4">Wellness Programs</h3>
+              <p class="card-text">Join our wellness programs to improve your overall health and wellbeing.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <section class="container content-section" id="wellness-tips">
+      <h2 class="section-heading text-center">Wellness Tips</h2>
+      <p class="text-center">Living a healthy lifestyle doesn't have to be hard. Here are some simple tips to help you improve your overall wellbeing:</p>
+      <ul class="tips-list">
+        <li><strong>Stay Active:</strong> Regular physical activity can improve your mood and reduce feelings of anxiety.</li>
+        <li><strong>Eat Healthy:</strong> A balanced diet can help you maintain a healthy weight and reduce your risk of chronic diseases.</li>
+        <li><strong>Get Enough Sleep:</strong> Good sleep is essential for your physical health and mental wellbeing.</li>
+        <li><strong>Manage Stress:</strong> Techniques such as meditation and deep breathing can help you manage stress and improve your mental health.</li>
+        <li><strong>Stay Hydrated:</strong> Drinking enough water can improve your energy levels and brain function.</li>
+      </ul>
+    </section>
 
+    <section class="container content-section" id="testimonials">
+      <h2 class="section-heading text-center">Testimonials</h2>
+      <div id="testimonialCarousel" class="carousel slide testimonial-carousel" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Testimonial 1"></button>
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"
+            aria-label="Testimonial 2"></button>
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"
+            aria-label="Testimonial 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active testimonial-slide">
+            <img class="testimonial-headshot" src="images/jane_smith.png" alt="Jane Smith">
+            <blockquote>"The yoga classes helped me feel stronger, calmer, and more flexible."</blockquote>
+            <footer class="text-muted">- Jane Smith</footer>
+          </div>
+          <div class="carousel-item testimonial-slide">
+            <img class="testimonial-headshot" src="images/emily_johnson.png" alt="Emily Johnson">
+            <blockquote>"I love the relaxing atmosphere at Seven Seas Spa. It's the perfect place to unwind after a long week."</blockquote>
+            <footer class="text-muted">- Emily Johnson</footer>
+          </div>
+          <div class="carousel-item testimonial-slide">
+            <img class="testimonial-headshot" src="images/john_doe.png" alt="John Doe">
+            <blockquote>"The wellness team gave me practical advice I can use every day."</blockquote>
+            <footer class="text-muted">- John Doe</footer>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous testimonial</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next testimonial</span>
+        </button>
+      </div>
+    </section>
+  </main>
 
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p class="mb-0">&copy; 2027 Seven Seas Spa</p>
+      <nav class="social-links" aria-label="Social media links">
+        <a href="https://www.facebook.com/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-facebook" aria-hidden="true"></i>
+        </a>
+        <a href="https://twitter.com/" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-twitter" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.instagram.com/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-linkedin" aria-hidden="true"></i>
+        </a>
+      </nav>
+    </div>
+  </footer>
 
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
